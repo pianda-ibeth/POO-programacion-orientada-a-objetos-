@@ -76,3 +76,4 @@ cliente1.ver_carrito()
 
 # Mostrar productos después de la compra para ver el cambio en el stock
 mi_tienda.mostrar_productos()
+
