@@ -199,20 +199,20 @@ class AsianDramaManagerApp:
         button_frame.grid(row=3, column=0, columnspan=4, sticky=(tk.W, tk.E), pady=10)
 
         # Botón para agregar drama
-        self.add_button = ttk.Button(button_frame, text="➕ Agregar", command=self.add_drama, style='Add.TButton')
+        self.add_button = ttk.Button(button_frame, text=" Agregar", command=self.add_drama, style='Add.TButton')
         self.add_button.grid(row=0, column=0, padx=(0, 10))
 
         # Botón para marcar como vista
-        self.watched_button = ttk.Button(button_frame, text="✅ Marcar como Vista", command=self.mark_as_watched)
+        self.watched_button = ttk.Button(button_frame, text=" Marcar como Vista", command=self.mark_as_watched)
         self.watched_button.grid(row=0, column=1, padx=(0, 10))
 
         # Botón para limpiar lista
-        self.clear_button = ttk.Button(button_frame, text="🗑️ Limpiar Todo", command=self.clear_dramas,
+        self.clear_button = ttk.Button(button_frame, text=" Limpiar Todo", command=self.clear_dramas,
                                        style='Clear.TButton')
         self.clear_button.grid(row=0, column=2, padx=(0, 10))
 
         # Botón para recomendar aleatorio
-        self.random_button = ttk.Button(button_frame, text="🎲 Recomendar Aleatorio", command=self.recommend_random)
+        self.random_button = ttk.Button(button_frame, text=" Recomendar Aleatorio", command=self.recommend_random)
         self.random_button.grid(row=0, column=3)
 
         # Etiqueta para la lista de dramas
@@ -300,7 +300,7 @@ class AsianDramaManagerApp:
         self.drama_entry.focus()
 
         # Actualizar estado
-        self.status_label.config(text=f"✅ Novela agregada: {drama} ({drama_type}) - Rating: {rating}")
+        self.status_label.config(text=f" Novela agregada: {drama} ({drama_type}) - Rating: {rating}")
 
     def clear_dramas(self):
         """Limpia todos los dramas de la lista (excepto los precargados)."""
@@ -321,7 +321,7 @@ class AsianDramaManagerApp:
             ]]
 
             self.update_dramas_table()
-            self.status_label.config(text="🗑️ Todas las novelas adicionales han sido eliminadas")
+            self.status_label.config(text=" Todas las novelas adicionales han sido eliminadas")
 
     def mark_as_watched(self):
         """Marca el drama seleccionado como visto."""
@@ -337,7 +337,7 @@ class AsianDramaManagerApp:
 
         # Actualizar la tabla
         self.update_dramas_table()
-        self.status_label.config(text=f"✅ ¡Novela marcada como vista: {self.selected_drama}!")
+        self.status_label.config(text=f" ¡Novela marcada como vista: {self.selected_drama}!")
         self.selected_drama = None
 
     def recommend_random(self):
@@ -368,7 +368,7 @@ class AsianDramaManagerApp:
 
         # Insertar los dramas actualizados
         for i, drama in enumerate(self.dramas_list, 1):
-            estado = "✅ Vista" if drama["vista"] else "❌ Por ver"
+            estado = " Vista" if drama["vista"] else " Por ver"
             rating_str = f"{drama['rating']}/5.0"
             self.dramas_tree.insert('', tk.END, values=(i, drama["nombre"], drama["tipo"], rating_str, estado))
 
@@ -394,9 +394,9 @@ class AsianDramaManagerApp:
         if total == 0:
             self.status_label.config(text="Lista vacía. Agrega novelas que quieras ver.")
         elif vistas == total:
-            self.status_label.config(text="🎉 ¡Felicidades! Has visto todas tus novelas.")
+            self.status_label.config(text=" ¡Felicidades! Has visto todas tus novelas.")
         else:
-            self.status_label.config(text=f"💪 ¡Sigue así! Te faltan {pendientes} novelas por ver.")
+            self.status_label.config(text=f" ¡Sigue así! Te faltan {pendientes} novelas por ver.")
 
 
 def main():
