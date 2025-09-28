@@ -9,7 +9,7 @@ class UniversityTodoApp:
         Inicializa la aplicación de lista de tareas universitarias.
         """
         self.root = root
-        self.root.title("🎓 Gestor de Tareas Universitarias")
+        self.root.title(" Gestor de Tareas Universitarias")
         self.root.geometry("1000x700")
         self.root.resizable(True, True)
         self.root.configure(bg='#f0f8ff')  # Fondo azul pastel
@@ -129,7 +129,7 @@ class UniversityTodoApp:
         title_frame = ttk.Frame(main_frame)
         title_frame.pack(fill=tk.X, pady=(0, 15))
 
-        title_label = tk.Label(title_frame, text="🎓 Gestor de Tareas Universitarias - ¡Organiza tu Semestre!",
+        title_label = tk.Label(title_frame, text=" Gestor de Tareas Universitarias - ¡Organiza tu Semestre!",
                                font=("Arial", 16, "bold"),
                                bg='#E6E6FA',  # Lavanda pastel
                                fg='#4B0082',  # Índigo
@@ -138,7 +138,7 @@ class UniversityTodoApp:
         title_label.pack(fill=tk.X)
 
         # Frame para el formulario de nueva tarea
-        form_frame = tk.LabelFrame(main_frame, text="➕ Agregar Nueva Tarea Universitaria",
+        form_frame = tk.LabelFrame(main_frame, text=" Agregar Nueva Tarea Universitaria",
                                    font=("Arial", 11, "bold"),
                                    bg='#F0F8FF',  # Azul alice
                                    fg='#2E8B57',  # Verde mar
@@ -150,7 +150,7 @@ class UniversityTodoApp:
         form_frame.columnconfigure(3, weight=1)
 
         # Materia
-        tk.Label(form_frame, text="📚 Materia:", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
+        tk.Label(form_frame, text=" Materia:", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
             row=0, column=0, sticky=tk.W, pady=8, padx=10)
         self.subject_var = tk.StringVar()
         self.subject_combo = ttk.Combobox(form_frame, textvariable=self.subject_var,
@@ -158,7 +158,7 @@ class UniversityTodoApp:
         self.subject_combo.grid(row=0, column=1, sticky=(tk.W, tk.E), pady=8, padx=(5, 15))
 
         # Tipo de tarea
-        tk.Label(form_frame, text="📋 Tipo de Actividad:", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
+        tk.Label(form_frame, text=" Tipo de Actividad:", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
             row=0, column=2, sticky=tk.W, pady=8, padx=10)
         self.type_var = tk.StringVar()
         self.type_combo = ttk.Combobox(form_frame, textvariable=self.type_var,
@@ -166,13 +166,13 @@ class UniversityTodoApp:
         self.type_combo.grid(row=0, column=3, sticky=(tk.W, tk.E), pady=8, padx=(5, 10))
 
         # Descripción de la tarea
-        tk.Label(form_frame, text="📝 Descripción específica:", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
+        tk.Label(form_frame, text=" Descripción específica:", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
             row=1, column=0, sticky=tk.W, pady=8, padx=10)
         self.desc_entry = ttk.Entry(form_frame, font=("Arial", 10), width=40)
         self.desc_entry.grid(row=1, column=1, columnspan=3, sticky=(tk.W, tk.E), pady=8, padx=(5, 10))
 
         # Fecha de entrega y prioridad
-        tk.Label(form_frame, text="📅 Fecha de entrega (YYYY-MM-DD):", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
+        tk.Label(form_frame, text=" Fecha de entrega (YYYY-MM-DD):", bg='#F0F8FF', font=("Arial", 10, "bold")).grid(
             row=2, column=0, sticky=tk.W, pady=8, padx=10)
         self.date_entry = ttk.Entry(form_frame, width=18, font=("Arial", 10))
         self.date_entry.grid(row=2, column=1, sticky=tk.W, pady=8, padx=(5, 15))
@@ -195,7 +195,7 @@ class UniversityTodoApp:
         button_main_frame.grid(row=3, column=0, columnspan=4, pady=(15, 10))
 
         # BOTÓN PRINCIPAL: Añadir Tarea (Verde pastel)
-        self.add_button = ttk.Button(button_main_frame, text="➕ Añadir Nueva Tarea",
+        self.add_button = ttk.Button(button_main_frame, text=" Añadir Nueva Tarea",
                                      command=self.add_task, style='PastelGreen.TButton')
         self.add_button.pack(side=tk.LEFT, padx=5)
 
@@ -205,7 +205,7 @@ class UniversityTodoApp:
         self.clear_form_button.pack(side=tk.LEFT, padx=5)
 
         # Frame para la lista de tareas
-        list_frame = tk.LabelFrame(main_frame, text="📋 Lista de Tareas Universitarias (15 tareas de ejemplo)",
+        list_frame = tk.LabelFrame(main_frame, text=" Lista de Tareas Universitarias (15 tareas de ejemplo)",
                                    font=("Arial", 11, "bold"),
                                    bg='#F0F8FF',
                                    fg='#2E8B57',
@@ -218,12 +218,12 @@ class UniversityTodoApp:
                                        height=15, style='Pastel.Treeview')
 
         # Configurar columnas
-        self.tasks_tree.heading("subject", text="📚 Materia")
-        self.tasks_tree.heading("type", text="📋 Tipo de Actividad")
-        self.tasks_tree.heading("description", text="📝 Descripción")
-        self.tasks_tree.heading("due_date", text="📅 Fecha Entrega")
-        self.tasks_tree.heading("priority", text="⚡ Prioridad")
-        self.tasks_tree.heading("status", text="✅ Estado")
+        self.tasks_tree.heading("subject", text=" Materia")
+        self.tasks_tree.heading("type", text=" Tipo de Actividad")
+        self.tasks_tree.heading("description", text=" Descripción")
+        self.tasks_tree.heading("due_date", text=" Fecha Entrega")
+        self.tasks_tree.heading("priority", text=" Prioridad")
+        self.tasks_tree.heading("status", text=" Estado")
 
         self.tasks_tree.column("subject", width=120, anchor='center')
         self.tasks_tree.column("type", width=150, anchor='center')
@@ -260,14 +260,14 @@ class UniversityTodoApp:
         row1_frame.pack(fill=tk.X, pady=5)
 
         # BOTÓN ESPECIAL: "¡Ya cumplí!" - Celebración
-        self.celebrate_button = ttk.Button(row1_frame, text="🎉 ¡Ya cumplí! (Marcar como Entregado)",
+        self.celebrate_button = ttk.Button(row1_frame, text=" ¡Ya cumplí! (Marcar como Entregado)",
                                            command=self.mark_completed_with_celebration,
                                            state="disabled",
                                            style='PastelCyan.TButton')
         self.celebrate_button.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
 
         # BOTÓN: Marcar como Entregado normal
-        self.complete_button = ttk.Button(row1_frame, text="✅ Marcar como Entregado",
+        self.complete_button = ttk.Button(row1_frame, text=" Marcar como Entregado",
                                           command=self.mark_completed,
                                           state="disabled",
                                           style='PastelBlue.TButton')
@@ -277,19 +277,19 @@ class UniversityTodoApp:
         row2_frame = tk.Frame(action_frame, bg='#F0F8FF')
         row2_frame.pack(fill=tk.X, pady=5)
 
-        self.delete_button = ttk.Button(row2_frame, text="🗑️ Eliminar Tarea",
+        self.delete_button = ttk.Button(row2_frame, text="️ Eliminar Tarea",
                                         command=self.delete_task,
                                         state="disabled",
                                         style='PastelPink.TButton')
         self.delete_button.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
 
-        self.edit_button = ttk.Button(row2_frame, text="✏️ Editar Tarea",
+        self.edit_button = ttk.Button(row2_frame, text=" Editar Tarea",
                                       command=self.edit_task,
                                       state="disabled",
                                       style='PastelOrange.TButton')
         self.edit_button.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
 
-        self.duplicate_button = ttk.Button(row2_frame, text="📋 Duplicar Tarea",
+        self.duplicate_button = ttk.Button(row2_frame, text=" Duplicar Tarea",
                                            command=self.duplicate_task,
                                            state="disabled",
                                            style='PastelPurple.TButton')
@@ -306,22 +306,22 @@ class UniversityTodoApp:
         row3_frame = tk.Frame(extra_buttons_frame, bg='#F0F8FF')
         row3_frame.pack(fill=tk.X, pady=5)
 
-        self.filter_button = ttk.Button(row3_frame, text="🔍 Filtrar por Materia",
+        self.filter_button = ttk.Button(row3_frame, text=" Filtrar por Materia",
                                         command=self.filter_by_subject,
                                         style='PastelPurple.TButton')
         self.filter_button.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
 
-        self.show_all_button = ttk.Button(row3_frame, text="📊 Mostrar Todas las Tareas",
+        self.show_all_button = ttk.Button(row3_frame, text=" Mostrar Todas las Tareas",
                                           command=self.show_all_tasks,
                                           style='PastelGreen.TButton')
         self.show_all_button.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
 
-        self.sort_date_button = ttk.Button(row3_frame, text="📅 Ordenar por Fecha",
+        self.sort_date_button = ttk.Button(row3_frame, text=" Ordenar por Fecha",
                                            command=self.sort_by_date,
                                            style='PastelYellow.TButton')
         self.sort_date_button.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
 
-        self.clear_completed_button = ttk.Button(row3_frame, text="🧹 Limpiar Entregadas",
+        self.clear_completed_button = ttk.Button(row3_frame, text=" Limpiar Entregadas",
                                                  command=self.clear_completed_tasks,
                                                  style='PastelPink.TButton')
         self.clear_completed_button.pack(side=tk.LEFT, padx=5, pady=5, expand=True, fill=tk.X)
@@ -345,7 +345,7 @@ class UniversityTodoApp:
         self.date_entry.insert(0, datetime.now().strftime("%Y-%m-%d"))
         self.priority_var.set("Media")
         self.desc_entry.focus()
-        messagebox.showinfo("Formulario limpiado", "🧹 El formulario ha sido limpiado")
+        messagebox.showinfo("Formulario limpiado", " El formulario ha sido limpiado")
 
     def setup_bindings(self):
         """Configura los eventos del teclado."""
@@ -536,7 +536,7 @@ class UniversityTodoApp:
         self.desc_entry.delete(0, tk.END)
         self.desc_entry.focus()
 
-        messagebox.showinfo("Éxito", "✅ Tarea añadida correctamente!")
+        messagebox.showinfo("Éxito", " Tarea añadida correctamente!")
 
     def on_task_select(self, event):
         """Maneja la selección de tareas."""
@@ -574,14 +574,7 @@ class UniversityTodoApp:
             if not task["completed"]:
                 task["completed"] = True
 
-                # Mensaje de celebración especial
-                celebration_messages = [
-                    "🎉 ¡Felicidades! ¡Has cumplido con esta tarea! 🎉",
-                    "🌟 ¡Excelente trabajo! ¡Tarea completada con éxito! 🌟",
-                    "💪 ¡Lo lograste! ¡Sigue así! 💪",
-                    "🏆 ¡Gran esfuerzo! ¡Tarea marcada como cumplida! 🏆",
-                    "✅ ¡Misión cumplida! ¡Eres un/a estudiante ejemplar! ✅"
-                ]
+
 
                 import random
                 message = random.choice(celebration_messages)
@@ -643,7 +636,7 @@ class UniversityTodoApp:
                 # Actualizar la visualización
                 self.refresh_task_display()
                 self.update_stats()
-                messagebox.showinfo("Eliminada", "🗑️ Tarea eliminada correctamente")
+                messagebox.showinfo("Eliminada", " Tarea eliminada correctamente")
 
     def edit_task(self):
         """Permite editar la tarea seleccionada."""
@@ -663,7 +656,7 @@ class UniversityTodoApp:
     def create_edit_window(self, task, task_id):
         """Crea una ventana para editar una tarea."""
         edit_window = tk.Toplevel(self.root)
-        edit_window.title("✏️ Editar Tarea Universitaria")
+        edit_window.title(" Editar Tarea Universitaria")
         edit_window.geometry("400x350")
         edit_window.configure(bg='#f0f8ff')
         edit_window.transient(self.root)
@@ -674,25 +667,25 @@ class UniversityTodoApp:
         edit_frame.pack(fill=tk.BOTH, expand=True)
 
         # Campos de edición
-        tk.Label(edit_frame, text="📚 Materia:", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
+        tk.Label(edit_frame, text=" Materia:", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
             row=0, column=0, sticky=tk.W, pady=5)
         subject_var = tk.StringVar(value=task["subject"])
         subject_combo = ttk.Combobox(edit_frame, textvariable=subject_var, values=self.subjects, width=25)
         subject_combo.grid(row=0, column=1, sticky=(tk.W, tk.E), pady=5, padx=(10, 0))
 
-        tk.Label(edit_frame, text="📋 Tipo de Actividad:", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
+        tk.Label(edit_frame, text=" Tipo de Actividad:", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
             row=1, column=0, sticky=tk.W, pady=5)
         type_var = tk.StringVar(value=task["type"])
         type_combo = ttk.Combobox(edit_frame, textvariable=type_var, values=self.task_types, width=25)
         type_combo.grid(row=1, column=1, sticky=(tk.W, tk.E), pady=5, padx=(10, 0))
 
-        tk.Label(edit_frame, text="📝 Descripción:", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
+        tk.Label(edit_frame, text=" Descripción:", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
             row=2, column=0, sticky=tk.W, pady=5)
         desc_var = tk.StringVar(value=task["description"])
         desc_entry = ttk.Entry(edit_frame, textvariable=desc_var, width=30)
         desc_entry.grid(row=2, column=1, sticky=(tk.W, tk.E), pady=5, padx=(10, 0))
 
-        tk.Label(edit_frame, text="📅 Fecha (YYYY-MM-DD):", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
+        tk.Label(edit_frame, text=" Fecha (YYYY-MM-DD):", bg='#f0f8ff', font=("Arial", 10, "bold")).grid(
             row=3, column=0, sticky=tk.W, pady=5)
         date_var = tk.StringVar(value=task["due_date"])
         date_entry = ttk.Entry(edit_frame, textvariable=date_var)
@@ -734,11 +727,11 @@ class UniversityTodoApp:
             # Actualizar la visualización
             self.refresh_task_display()
             edit_window.destroy()
-            messagebox.showinfo("Éxito", "✅ Tarea actualizada correctamente!")
+            messagebox.showinfo("Éxito", " Tarea actualizada correctamente!")
 
-        ttk.Button(button_frame, text="💾 Guardar Cambios", command=save_changes,
+        ttk.Button(button_frame, text=" Guardar Cambios", command=save_changes,
                    style='PastelGreen.TButton').pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="❌ Cancelar", command=edit_window.destroy,
+        ttk.Button(button_frame, text=" Cancelar", command=edit_window.destroy,
                    style='PastelPink.TButton').pack(side=tk.LEFT, padx=5)
 
     def duplicate_task(self):
@@ -765,13 +758,13 @@ class UniversityTodoApp:
             }
 
             self.add_task_from_data(new_task)
-            messagebox.showinfo("Duplicada", "📋 Tarea duplicada correctamente")
+            messagebox.showinfo("Duplicada", " Tarea duplicada correctamente")
 
     def filter_by_subject(self):
         """Filtra las tareas por materia."""
         # Crear ventana de selección de materia
         filter_window = tk.Toplevel(self.root)
-        filter_window.title("🔍 Filtrar por Materia")
+        filter_window.title(" Filtrar por Materia")
         filter_window.geometry("300x200")
         filter_window.configure(bg='#f0f8ff')
         filter_window.transient(self.root)
@@ -805,15 +798,15 @@ class UniversityTodoApp:
         button_frame = tk.Frame(filter_window, bg='#f0f8ff')
         button_frame.pack(pady=15)
 
-        ttk.Button(button_frame, text="🔍 Aplicar Filtro", command=apply_filter,
+        ttk.Button(button_frame, text=" Aplicar Filtro", command=apply_filter,
                    style='PastelBlue.TButton').pack(side=tk.LEFT, padx=5)
-        ttk.Button(button_frame, text="❌ Cancelar", command=filter_window.destroy,
+        ttk.Button(button_frame, text=" Cancelar", command=filter_window.destroy,
                    style='PastelPink.TButton').pack(side=tk.LEFT, padx=5)
 
     def show_all_tasks(self):
         """Muestra todas las tareas."""
         self.refresh_task_display()
-        messagebox.showinfo("Mostrar todas", "📊 Mostrando todas las tareas")
+        messagebox.showinfo("Mostrar todas", " Mostrando todas las tareas")
 
     def sort_by_date(self):
         """Ordena las tareas por fecha de entrega."""
@@ -824,7 +817,7 @@ class UniversityTodoApp:
             task["id"] = i
 
         self.refresh_task_display()
-        messagebox.showinfo("Ordenado", "📅 Tareas ordenadas por fecha de entrega")
+        messagebox.showinfo("Ordenado", " Tareas ordenadas por fecha de entrega")
 
     def clear_completed_tasks(self):
         """Elimina todas las tareas marcadas como completadas."""
@@ -868,17 +861,17 @@ class UniversityTodoApp:
         # Determinar etiquetas para prioridad y estado
         priority_text = task["priority"]
         if task["completed"]:
-            status_text = "✅ " + status
+            status_text = " " + status
         else:
-            status_text = "⏳ " + status
+            status_text = " " + status
 
             # Marcar como urgente si la fecha está próxima
             due_date = datetime.strptime(task["due_date"], "%Y-%m-%d")
             days_until_due = (due_date - datetime.now()).days
             if days_until_due <= 1:
-                priority_text = "🚨 " + priority_text
+                priority_text = " " + priority_text
             elif days_until_due <= 3:
-                priority_text = "⚠️ " + priority_text
+                priority_text = " " + priority_text
 
         item_id = self.tasks_tree.insert("", tk.END, values=(
             task["subject"],
@@ -922,7 +915,7 @@ class UniversityTodoApp:
                 if days_until_due <= 1:
                     urgent += 1
 
-        stats_text = (f"📊Estadísticas: Total: {total} |  Entregados: {completed} | "
+        stats_text = (f"Estadísticas: Total: {total} |  Entregados: {completed} | "
                       f" Pendientes: {pending} |  Urgentes: {urgent}")
 
         self.stats_label.config(text=stats_text)
